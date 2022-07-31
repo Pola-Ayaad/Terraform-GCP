@@ -1,0 +1,24 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "hello-app"
+  namespace: "default"
+  labels: 
+    app: "myapp"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "myapp"
+  template:
+    metadata:
+      labels:
+        app: "myapp"
+    spec:
+      containers:
+      - name: "my-app"
+        image: "index.docker.io/vplma/gcp-terraform:gcp"
+
+
+
+        
